@@ -32,3 +32,4 @@ deploy-*
 scripts/
 
 .DS_Store
+.flake8
