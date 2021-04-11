@@ -1,6 +1,9 @@
-from flask import Flask
+from flask import Flask, render_template, request
+from sets import sets
 
 from mtg_skeleton_gen.gen_skeleton import generate_skeleton
+
+rarities = ["common", "uncommon", "rare", "mythic"]
 
 
 def create_app():
@@ -12,10 +15,21 @@ app = create_app()
 
 
 @app.route("/")
-def main():
-    return generate_skeleton(
-        "khm", {"R", "G"}, {"common": 2, "uncommon": 1, "rare": 1, "mythic": 1}
-    ).replace("\n", "<br/>")
+def index():
+    dropdown_sets = sets.keys()
+    return render_template(
+        "index.html", colors="WUBRG", dropdown_sets=dropdown_sets, rarities=rarities
+    )
+
+
+@app.route("/gen_skeleton")
+def gen_skeleton():
+    set_choice = request.args.get("set", type=str)
+    set_codes = sets[set_choice]
+    colors = set(request.values.getlist("colors"))
+    print(colors)
+    rarity_numbers = {rarity: request.values.get(rarity) for rarity in rarities}
+    return generate_skeleton(set_codes, colors, rarity_numbers).replace("\n", "<br/>")
 
 
 if __name__ == "__main__":

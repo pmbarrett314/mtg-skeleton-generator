@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mtg skeleton generator</title>
+</head>
+<body>
+<form method="GET" action="/gen_skeleton">
+    <label for="set">Set</label>
+    <select name="set" id="set">
+        {% for set in dropdown_sets %}
+            <option value={{ set }}>{{ set }}</option>
+        {% endfor %}
+    </select>
+    <fieldset>
+        <legend>Colors to include</legend>
+        <table>
+            {% for color in colors %}
+                <tr>
+                    <td><label for="colors">{{ color }}</label></td>
+                    <td><input type="checkbox" name="colors" id="colors" value={{ color }}></td>
+                </tr>
+            {% endfor %}
+        </table>
+    </fieldset>
+    <fieldset>
+        <legend>Cards per rarity</legend>
+        <table>
+            {% for rarity in rarities %}
+                <tr>
+                    <td><label for="rarity">{{ rarity }}</label></td>
+                    <td><input name={{ rarity }} id="rarity" type="number" min=0 max=10 value=0 {{ rarity }}></td>
+                </tr>
+            {% endfor %}
+        </table>
+    </fieldset>
+    <input type="submit">
+</form>
+</body>
+</html>
