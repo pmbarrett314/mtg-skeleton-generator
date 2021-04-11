@@ -1,13 +1,18 @@
+import os
+
 from flask import Flask, render_template, request
 
 from mtg_skeleton_gen.gen_skeleton import generate_skeleton
+from mtg_skeleton_gen.mtg_db import project_root
 from mtg_skeleton_gen.sets import sets
 
 rarities = ["common", "uncommon", "rare", "mythic"]
 
+templates_root = os.path.join(project_root, "templates")
+
 
 def create_app():
-    _app = Flask("mtg-skeleton-generator")
+    _app = Flask("mtg-skeleton-generator", template_folder=templates_root)
     return _app
 
 
