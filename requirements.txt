@@ -1,0 +1,2 @@
+git+git://github.com/EskoSalaka/mtgtools/commit/d94e3e4991ee63436e0c47e7b8c0e11bd275aaa4#egg=mtgtools
+flask==1.1.2
