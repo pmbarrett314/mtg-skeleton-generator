@@ -6,3 +6,5 @@ __pycache__/
 .idea/
 data/mtg_db.*
 data/sets/*.pickle
+
+deploy-*

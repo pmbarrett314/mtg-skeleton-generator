@@ -1,0 +1,1 @@
+from mtg_skeleton_gen.skeleton_gen_app import app

@@ -13,6 +13,7 @@
 # below:
 .git
 .gitignore
+.gitattributes
 
 
 # Byte-compiled / optimized / DLL files
@@ -21,7 +22,11 @@ __pycache__/
 *$py.class
 
 .idea/
+
 data/mtg_db.*
 *.md
 *.yaml
 *.toml
+
+deploy-*
+scripts/

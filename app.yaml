@@ -1,0 +1,6 @@
+runtime: python38
+
+handlers:
+- url: /robots.txt$
+  static_files: static/robots.txt
+  upload: static/robots.txt
