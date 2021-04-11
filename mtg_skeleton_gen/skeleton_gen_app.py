@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request
-from sets import sets
 
 from mtg_skeleton_gen.gen_skeleton import generate_skeleton
+from mtg_skeleton_gen.sets import sets
 
 rarities = ["common", "uncommon", "rare", "mythic"]
 
