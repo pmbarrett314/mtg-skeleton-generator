@@ -1,6 +1,5 @@
 import os
 import pickle
-
 from contextlib import closing
 
 from mtgtools.MtgDB import MtgDB
