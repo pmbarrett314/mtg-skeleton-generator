@@ -8,3 +8,5 @@ data/mtg_db.*
 data/sets/*.pickle
 
 deploy-*
+
+.DS_Store
