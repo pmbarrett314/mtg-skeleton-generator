@@ -26,12 +26,12 @@ def write_set_data(set_code, input_filename=None, output_filename=None):
     if input_filename is None:
         input_filename = db_file
     if output_filename is None:
-        output_file = os.path.join(sets_dir, "{}.pickle".format(set_code))
+        output_filename = os.path.join(sets_dir, "{}.pickle".format(set_code))
 
     with card_manager(input_filename) as mtg_db:
         scryfall_cards = mtg_db.root.scryfall_cards
         set_cards = list(scryfall_cards.where_exactly(set=set_code))
-        with open(output_file, "wb") as f:
+        with open(output_filename, "wb") as f:
             pickle.dump(list(set_cards), f)
 
 
