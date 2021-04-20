@@ -32,7 +32,6 @@ def gen_skeleton():
     set_choice = request.args.get("set", type=str)
     set_codes = sets[set_choice]
     colors = set(request.values.getlist("colors"))
-    print(colors)
     rarity_numbers = {rarity: request.values.get(rarity) for rarity in rarities}
     return generate_skeleton(set_codes, colors, rarity_numbers).replace("\n", "<br/>")
 
