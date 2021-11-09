@@ -23,7 +23,10 @@ app = create_app()
 def index():
     dropdown_sets = sets.keys()
     return render_template(
-        "index.html", colors="WUBRG", dropdown_sets=dropdown_sets, rarities=rarities
+        "index.html",
+        colors="WUBRG",
+        dropdown_sets=dropdown_sets,
+        rarities=rarities,
     )
 
 

@@ -8,7 +8,9 @@ def is_land_touching_colors(card, colors):
 
 
 def generate_skeleton(
-    set_codes: Set[str], colors: Set[str], rarity_numbers: Dict[str, int]
+    set_codes: Set[str],
+    colors: Set[str],
+    rarity_numbers: Dict[str, int],
 ):
     def is_valid_card(card):
         if (
